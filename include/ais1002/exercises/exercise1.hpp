@@ -2,6 +2,9 @@
 #ifndef AIS1002_LAB_WEEK_6_EXERCISE1_HPP
 #define AIS1002_LAB_WEEK_6_EXERCISE1_HPP
 
+#include <algorithm>
+#include <cctype>
+#include <numeric>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -9,34 +12,28 @@
 
 namespace ais1002 {
 
-double multiplyDoubles(double a, double b) {
-  // TODO return the result of a multiplied by b
-
-  return -1; // placeholder
-}
+double multiplyDoubles(double a, double b) { return a * b; }
 
 int computeSum(const std::vector<int> &values) {
-  // TODO return the sum of all numbers in `values`
-
-  return -1; // placeholder
+  return std::accumulate(values.begin(), values.end(), 0);
 }
 
 int countValuesBelowThreshold(const std::vector<double> &values) {
-  // TODO return the number of elements in `values` that has a value < 50
-
-  return -1; // placeholder
+  return (int) std::count_if(values.begin(), values.end(),
+                       [](double d) { return d < 50; });
 }
 
 void capitalizeString(std::string &str) {
-  // TODO: Capitalize the string referenced by str
+  str[0] = static_cast<char>(std::toupper(str[0]));
 }
 
 std::unordered_map<std::string, int>
 convert(const std::vector<std::pair<std::string, int>> &list) {
-
-  // TODO: Convert the list of pairs to a map
-
-  return {}; // placeholder
+  std::unordered_map<std::string, int> m;
+  for (auto &elem : list) {
+    m[elem.first] = elem.second;
+  }
+  return m;
 }
 
 } // namespace ais1002
