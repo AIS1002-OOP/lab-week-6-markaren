@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Exercise1",
+      "setup": "mkdir build && cmake . -B build && cmake --build build --target exercise1",
+      "run": "cd build/bin && ./exercise1",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Exercise2",
+      "setup": "cmake . -B build && cmake --build build --target exercise2",
+      "run": "cd build/bin && ./exercise2",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Exercise3",
+      "setup": "cmake . -B build && cmake --build build --target exercise3",
+      "run": "cd build/tests && ./exercise3",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Exercise4",
+      "setup": "cmake . -B build && cmake --build build --target exercise4",
+      "run": "cd build/tests && ./exercise4",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    }
+  ]
+}
