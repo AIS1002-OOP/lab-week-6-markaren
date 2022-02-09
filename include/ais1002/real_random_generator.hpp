@@ -10,7 +10,8 @@ namespace ais1002 {
 class real_random_generator {
 
 public:
-  real_random_generator() : dev(), gen(dev()), dis(0.0, 1.0) {}
+  real_random_generator() : real_random_generator(0.0, 1.0) {}
+  real_random_generator(double min, double max) : dev(), gen(dev()), dis(min, max) {}
 
   // Generates and returns new random number when invoked
   double operator()() { return dis(gen); }

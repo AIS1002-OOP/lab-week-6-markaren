@@ -3,18 +3,27 @@
 #define AIS1002_LAB_WEEK_6_EXERCISE3_HPP
 
 #include <filesystem>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 namespace ais1002 {
 
 std::string readTextFile(const std::filesystem::path &path) {
-  // TODO: Read and return the content of the file located in `path`
+  std::ifstream f(path);
 
-  return {}; // placeholder
+  std::stringstream ss;
+  for (std::string s; std::getline(f, s);) {
+    ss << s << "\n";
+  }
+
+  return ss.str();
 }
 
 void writeTextToFile(const std::filesystem::path &path,
                      const std::string &data) {
-  // TODO: Write the content of `data` to the file located in `path`
+  std::ofstream o(path);
+  o << data;
 }
 
 } // namespace ais1002
