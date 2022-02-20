@@ -23,7 +23,7 @@
     {
       "name": "Exercise3",
       "setup": "cmake . -B build && cmake --build build --target exercise3",
-      "run": "cd build/tests && ./exercise3",
+      "run": "cd build/bin && ./exercise3",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -33,7 +33,7 @@
     {
       "name": "Exercise4",
       "setup": "cmake . -B build && cmake --build build --target exercise4",
-      "run": "cd build/tests && ./exercise4",
+      "run": "cd build/bin && ./exercise4",
       "input": "",
       "output": "",
       "comparison": "included",

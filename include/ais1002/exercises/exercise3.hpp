@@ -9,22 +9,21 @@
 
 namespace ais1002 {
 
-std::string readTextFile(const std::filesystem::path &path) {
-  std::ifstream f(path);
+    std::string readTextFile(const std::filesystem::path &path) {
+        std::ifstream f(path);
 
-  std::stringstream ss;
-  for (std::string s; std::getline(f, s);) {
-    ss << s << "\n";
-  }
+        std::stringstream ss; // stringstream is more effective that std::string for appending
+        for (std::string s; std::getline(f, s);) {
+            ss << s << "\n";
+        }
 
-  return ss.str();
-}
+        return ss.str();
+    }
 
-void writeTextToFile(const std::filesystem::path &path,
-                     const std::string &data) {
-  std::ofstream o(path);
-  o << data;
-}
+    void writeTextToFile(const std::filesystem::path &path, const std::string &data) {
+        std::ofstream o(path);
+        o << data;
+    }
 
 } // namespace ais1002
 

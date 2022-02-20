@@ -34,12 +34,9 @@ TEST_CASE("1: Read file") {
 TEST_CASE("2: Write file") {
 
   std::filesystem::path p{"data/hello_out.txt"};
-
   std::string data{"AIS1002 - OOP & Algoritmer\n"};
 
-  std::ofstream file(p);
-  file << data;
-  file.close();
+  ais1002::writeTextToFile(p, data);
 
   auto read = readFile(p);
   REQUIRE(data == read);

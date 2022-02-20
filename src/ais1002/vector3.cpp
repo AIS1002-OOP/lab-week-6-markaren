@@ -1,6 +1,8 @@
 
 #include "ais1002/vector3.hpp"
 
+#include <cmath>
+
 using namespace ais1002;
 
 vector3::vector3(float x, float y, float z) : x(x), y(y), z(z) {}
